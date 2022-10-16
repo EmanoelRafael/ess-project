@@ -6,17 +6,24 @@ import { RouterModule }   from '@angular/router';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { CartComponent } from './cart.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    CartComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
-    //RouterModule
+    RouterModule.forRoot([
+      {
+        path: 'cart',
+        component: CartComponent
+      }
+    ])
   ],
   providers: [],
   bootstrap: [AppComponent]
