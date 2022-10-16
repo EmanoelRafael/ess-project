@@ -1,9 +1,12 @@
 import express = require('express');
 import bodyParser = require("body-parser");
+import { Service } from './service';
 
 var taserver = express();
 
 var alunos = [{nome:'Paulo',cpf:'nail',email:'phmb@cin.br',metas:{'requisitos':'MA'}},{nome:'Mariana',cpf:'456',email:'@mcb@cin.br',metas:{'requisitos':'MPA'}}];
+
+var service: Service = new Service();
 
 var allowCrossDomain = function(req: any, res: any, next: any) {
   res.header('Access-Control-Allow-Origin', "*");
@@ -11,6 +14,7 @@ var allowCrossDomain = function(req: any, res: any, next: any) {
   res.header('Access-Control-Allow-Headers', 'Content-Type');
   next();
 }
+
 taserver.use(allowCrossDomain);
 
 taserver.use(bodyParser.json());
