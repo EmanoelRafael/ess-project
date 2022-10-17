@@ -1,7 +1,7 @@
-import { Address } from "address";
-import { Card } from "card";
-import { Cart } from "cart";
-import { Order } from "order";
+import { Address } from "../common/address";
+import { Card } from "../common/card";
+import { Cart } from "../common/cart";
+import { Order } from "../common/order";
 
 export class Client {
     name: string;

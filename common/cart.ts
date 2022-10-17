@@ -1,5 +1,5 @@
-import { Address } from "address";
-import { Product } from "product";
+import { Address } from "../common/address";
+import { Product } from "../common/product";
 
 export class Cart {
     products: Map<Product,Number>;

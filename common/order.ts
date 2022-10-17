@@ -1,4 +1,4 @@
-import { Cart } from "cart";
+import { Cart } from "../common/cart";
 
 export class Order {
     cart: Cart;
