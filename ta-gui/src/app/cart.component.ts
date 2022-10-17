@@ -1,4 +1,5 @@
 import { Component, OnInit} from '@angular/core'
+import { StoreService } from './store.service';
 
 @Component({
     selector: 'cart',
@@ -7,5 +8,8 @@ import { Component, OnInit} from '@angular/core'
 })
 
 export class CartComponent {
+    constructor(private storeService: StoreService) {};
+
+    
     title = 'cart';
 }
