@@ -5,6 +5,8 @@ import { Service } from './service';
 var taserver = express();
 
 var service: Service = new Service();
+service.addClient("Emanoel Rafael", "111.111.111-11", "(81) 98888-8888", "emanoelrafel2020@gmail.com","08/01/1999");
+service.addClient("kellen mello", "222.222.222-22", "(91) 98787-8787", "KellenMello@gmail.com", "11/12/1996");
 
 var allowCrossDomain = function(req: any, res: any, next: any) {
   res.header('Access-Control-Allow-Origin', "*");
@@ -22,16 +24,11 @@ taserver.get('/', function (req: express.Request, res: express.Response) {
 })
 
 taserver.get('/cart', function (req: express.Request, res: express.Response) {
-  res.send(JSON.stringify(service.getClient().getCart()));
+  res.send(JSON.stringify(service.getClient(0).getCart()));
 })
 
 taserver.get('/email', function (req: express.Request, res: express.Response) {
-  res.send(JSON.stringify(service.getClient().getEmail()));
-})
-
-taserver.put('/aluno', function (req: express.Request, res: express.Response) {
-  var alunos = Number(req.body);
-  res.send("Mensagem Recebida!");
+  res.send(JSON.stringify(service.getClient(0).getEmail()));
 })
 
 taserver.listen(3000, function () {
