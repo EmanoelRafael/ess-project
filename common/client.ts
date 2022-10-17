@@ -20,13 +20,17 @@ export class Client {
         this.tel = tel;
         this.email = email;
         this.nasc = nasc;
-        this.address = null;
-        this.card = null;
-        this.cart = null;
-        this.orders = null;
+        this.address = new Address();
+        this.card = new Card();
+        this.cart = new Cart();
+        this.orders = new Array<Order> ();
     }
 
-    public getemail() : string {
+    public getCart() : Cart {
+        return this.cart;
+    }
+
+    public getEmail() : string {
         return this.email;
     }
     

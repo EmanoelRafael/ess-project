@@ -10,10 +10,10 @@ export class Cart {
 
 
     constructor() {
-        this.products = null;
+        this.products = new Map<Product,Number> ();
         this.value = 0;
         this.empty = true;
         this.shipping = 0;
-        this.deliveryAddress = null;
+        this.deliveryAddress = new Address();
     }
 }

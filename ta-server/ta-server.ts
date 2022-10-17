@@ -4,8 +4,6 @@ import { Service } from './service';
 
 var taserver = express();
 
-var alunos = [{nome:'Paulo',cpf:'nail',email:'phmb@cin.br',metas:{'requisitos':'MA'}},{nome:'Mariana',cpf:'456',email:'@mcb@cin.br',metas:{'requisitos':'MPA'}}];
-
 var service: Service = new Service();
 
 var allowCrossDomain = function(req: any, res: any, next: any) {
@@ -20,7 +18,15 @@ taserver.use(allowCrossDomain);
 taserver.use(bodyParser.json());
 
 taserver.get('/', function (req: express.Request, res: express.Response) {
-  res.send(JSON.stringify(alunos));
+  res.send(JSON.stringify("Fast&Ship"));
+})
+
+taserver.get('/cart', function (req: express.Request, res: express.Response) {
+  res.send(JSON.stringify(service.getClient().getCart()));
+})
+
+taserver.get('/email', function (req: express.Request, res: express.Response) {
+  res.send(JSON.stringify(service.getClient().getEmail()));
 })
 
 taserver.put('/aluno', function (req: express.Request, res: express.Response) {
@@ -29,5 +35,5 @@ taserver.put('/aluno', function (req: express.Request, res: express.Response) {
 })
 
 taserver.listen(3000, function () {
-  console.log('Example app listening on port 3000!');
+  console.log('Example app listening on port 3000!!!');
 })

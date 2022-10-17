@@ -8,7 +8,7 @@ import { StoreService } from './store.service';
 })
 
 export class CartComponent {
-    constructor(private storeService: StoreService) {};
+    //constructor(private storeService: StoreService) {};
 
     
     title = 'cart';
